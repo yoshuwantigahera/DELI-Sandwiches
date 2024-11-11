@@ -17,7 +17,7 @@ public class Order {
     public void addSandwich(SandWich sandWich){
         this.addSandwich(sandWich);
     }
-    public void addChips(Chips chips){
+    public void addChips(Chips chips) {
         this.addChips(chips);
     }
 

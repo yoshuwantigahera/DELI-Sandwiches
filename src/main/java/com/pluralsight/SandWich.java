@@ -1,15 +1,18 @@
 package com.pluralsight;
 
+import javax.script.ScriptContext;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SandWich extends Order {
-    private  int size;
-    private String bread;
+
+public abstract class SandWich extends Order {
+    private int size;
+    private BreadType bread;
     private  ArrayList<String> toppings;
     private boolean toasted;
 
-    public SandWich(int size, String bread, ArrayList<String> toppings){
+
+    public SandWich(int size, BreadType bread, ArrayList<String> toppings, boolean toasted){
         this.size = size;
         this.bread = bread;
         this.toppings = new ArrayList<>(); // Initialize toppings with passed list
@@ -25,11 +28,11 @@ public class SandWich extends Order {
         this.size = size;
     }
 
-    public String getBread() {
+    public BreadType getBread() {
         return bread;
     }
 
-    public void setBread(String bread) {
+    public void setBread(BreadType bread) {
         this.bread = bread;
     }
 
@@ -55,37 +58,72 @@ public class SandWich extends Order {
     }
 
     // Calculate the price of the sandwich based on size and toppings
-    public  double getPrice(){
-        double Baseprice = switch (size){
-            case 4 -> 5.50;
-            case 8 -> 6.50;
-            case 12 -> 7.50;
-            default -> 0;
+    public static void getPrice(){
+        System.out.println("Choose your size (inch): \n" +
+                " - 4 \n" +
+                " - 8 \n" +
+                " - 12 \n");
+        Scanner myscanner = new Scanner(System.in);
+        int size = myscanner.nextInt();
+
+        SandWichSize BasePrice = switch (size){
+            case 4 -> SandWichSize.SMALL;
+            case 8 -> SandWichSize.MEDIUM;
+            case 12 -> SandWichSize.LARGE;
+            default -> SandWichSize.DEFAULT;
+
         };
-        return getPrice();
+        System.out.println("You selected an " + size + "inch Sub");
+
     }
 
     public static void selectBread(){
-        System.out.println("Choose your bread type: White, Wheat, Rye, or Wrap.");
+        System.out.println("Choose your bread type:\n " +
+                " 1) white \n" +
+                " 2) wheat \n" +
+                " 3) rye \n" +
+                " 4) wrap ");
 
         Scanner myscanner = new Scanner(System.in);
-        String choice = myscanner.nextLine();
+        int BreadChoice = myscanner.nextInt();
 
-        switch (choice.toLowerCase()){
-            case "white":
-            case "wheat":
-            case "rye":
-            case "wrap":
-                System.out.println("You selected: " + choice);
-                break;
-            default:
-                System.out.println("Invalid choice. Please try again");
-                selectBread();
-                break;
-        }
+        BreadType bread = switch (BreadChoice){
+            case 1 -> BreadType.WHITE;
+            case 2 -> BreadType.WHEAT;
+            case 3 -> BreadType.RYE;
+            case 4 -> BreadType.WRAP;
+            default -> throw new IllegalArgumentException("Unexpected value: " + BreadChoice);
+
+        };
+    }
+
+    public static void meatChoice(){
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("What Zanzibar meat choice would you like: \n" +
+                " 1) steak \n " +
+                " 2) ham \n" +
+                " 3) salami \n" +
+                " 4) roast beef \n" +
+                " 5) chicken \n" +
+                " 6) bacon ");
+
+        int meatChoice = myScanner.nextInt();
+
+
+
+        MeatChoice meat = switch(meatChoice){
+            case 1 -> MeatChoice.STEAK;
+            case 2 -> MeatChoice.HAM;
+            case 3 -> MeatChoice.SALAMI;
+            case 4 -> MeatChoice.ROASTBEEF;
+            case 5 -> MeatChoice.CHICKEN;
+            case 6 -> MeatChoice.BACON;
+            default -> throw new IllegalStateException("Unexpected value: " + meatChoice);
+        };
     }
 
 
     public static void display(String s) {
     }
+
 }

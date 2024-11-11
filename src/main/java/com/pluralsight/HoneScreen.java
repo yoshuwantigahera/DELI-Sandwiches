@@ -1,13 +1,17 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.pluralsight.SandWich.selectBread;
-
-public class HoneScreen {
+public class HoneScreen extends SandWich {
     static Scanner myscanner = new Scanner(System.in);
 
     static boolean running = true;
+
+    public HoneScreen(int size, BreadType bread, ArrayList<String> toppings, boolean toasted) {
+        super(size, bread, toppings, toasted);
+    }
+
 
     public static void homeScreen() {
 
@@ -54,9 +58,13 @@ public class HoneScreen {
 
         switch (startOrder){
             case 1:
+                selectBread();
+                getPrice();
+                meatChoice();
+
+
 
             case 2:
-                selectBread();
 
             case 3:
 
@@ -67,4 +75,6 @@ public class HoneScreen {
             default:
         }
     }
+
+
 }
