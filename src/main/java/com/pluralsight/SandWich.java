@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import javax.script.ScriptContext;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -59,17 +60,17 @@ public abstract class SandWich extends Order {
 
     // Calculate the price of the sandwich based on size and toppings
     public static void getPrice(){
-        System.out.println("Choose your size (inch): \n" +
-                " - 4 \n" +
-                " - 8 \n" +
-                " - 12 \n");
+        System.out.println("Choose your size (inch): " +
+                " 1) 4 \n" +
+                " 2) 8 \n" +
+                " 3) 12 \n");
         Scanner myscanner = new Scanner(System.in);
         int size = myscanner.nextInt();
 
         SandWichSize BasePrice = switch (size){
-            case 4 -> SandWichSize.SMALL;
-            case 8 -> SandWichSize.MEDIUM;
-            case 12 -> SandWichSize.LARGE;
+            case 1 -> SandWichSize.SMALL;
+            case 2 -> SandWichSize.MEDIUM;
+            case 3 -> SandWichSize.LARGE;
             default -> SandWichSize.DEFAULT;
 
         };
@@ -123,7 +124,15 @@ public abstract class SandWich extends Order {
     }
 
 
+
+
+    public void  DisplayOrder(){
+        System.out.println();
+    }
+
+
     public static void display(String s) {
+        System.out.println();
     }
 
 }

@@ -1,5 +1,5 @@
 package com.pluralsight;
 
-public enum TypingSize {
+public enum ToppingMedium {
 
 }
