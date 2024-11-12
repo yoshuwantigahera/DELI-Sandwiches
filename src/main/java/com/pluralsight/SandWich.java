@@ -126,9 +126,6 @@ public abstract class SandWich extends Order {
 
 
 
-    public void  DisplayOrder(){
-        System.out.println();
-    }
 
 
     public static void display(String s) {

@@ -1,7 +1,6 @@
 package com.pluralsight;
 
-public enum ToppingSmall {
-
+public enum ToppingLarge {
 
     // Regular Toppings
     LETTUCE(ToppingType.REGULAR, 0),
@@ -22,38 +21,37 @@ public enum ToppingSmall {
     THOUSAND_ISLANDS(ToppingType.SUACES, 0),
     VINAIGRETTE(ToppingType.SUACES, 0),
 
-
     // Small Toppings (Meats)
-    HAM(ToppingType.SMALL, 1.00),
-    STEAK(ToppingType.SMALL, 1.00),
-    BACON(ToppingType.SMALL, 1.00),
-    SALAMI(ToppingType.SMALL, 1.00),
-    ROASTBEEF(ToppingType.SMALL, 1.00),
-    CHICKEN(ToppingType.SMALL, 1.00),
+    HAM(ToppingType.MEDIUM, 3.00),
+    STEAK(ToppingType.MEDIUM, 3.00),
+    BACON(ToppingType.MEDIUM, 3.00),
+    SALAMI(ToppingType.MEDIUM, 3.00),
+    ROASTBEEF(ToppingType.MEDIUM, 3.00),
+    CHICKEN(ToppingType.MEDIUM, 3.00),
 
     //Extra meat
-    HAM_EXTRA(ToppingType.EXTRAMEAT, 0.50),
-    STEAK_EXTRA(ToppingType.EXTRAMEAT, 0.50),
-    BACON_EXTRA(ToppingType.EXTRAMEAT, 0.50),
-    SALAMI_EXTRA(ToppingType.EXTRAMEAT, 0.50),
-    ROASTBEEF_EXTRA(ToppingType.EXTRAMEAT, 0.50),
-    CHICKEN_EXTRA(ToppingType.EXTRAMEAT, 0.50),
+    HAM_EXTRA(ToppingType.EXTRAMEAT, 1.50),
+    STEAK_EXTRA(ToppingType.EXTRAMEAT, 1.50),
+    BACON_EXTRA(ToppingType.EXTRAMEAT, 1.50),
+    SALAMI_EXTRA(ToppingType.EXTRAMEAT, 1.50),
+    ROASTBEEF_EXTRA(ToppingType.EXTRAMEAT, 1.50),
+    CHICKEN_EXTRA(ToppingType.EXTRAMEAT, 1.50),
 
     //CHEESE
-    AMERICAN(ToppingType.SMALL, 0.75),
-    PROVOLONE(ToppingType.SMALL, 0.75),
-    CHEDDAR(ToppingType.SMALL, 0.75),
-    SWISS(ToppingType.SMALL, 0.75),
+    AMERICAN(ToppingType.MEDIUM, 2.25),
+    PROVOLONE(ToppingType.MEDIUM, 2.25),
+    CHEDDAR(ToppingType.MEDIUM, 2.25),
+    SWISS(ToppingType.MEDIUM, 2.25),
 
-    AMERICAN_EXTRA(ToppingType.EXTRACHEESE, 0.30),
-    PROVOLONE_Extra(ToppingType.EXTRACHEESE, 0.30),
-    CHEDDAR_EXTRA(ToppingType.EXTRACHEESE, 0.30),
-    SWISS_EXTRA(ToppingType.EXTRACHEESE, 0.30);
+    AMERICAN_EXTRA(ToppingType.EXTRACHEESE, 0.90),
+    PROVOLONE_Extra(ToppingType.EXTRACHEESE, 0.90),
+    CHEDDAR_EXTRA(ToppingType.EXTRACHEESE, 0.90),
+    SWISS_EXTRA(ToppingType.EXTRACHEESE, 0.90);
 
     private final ToppingType type;
     private final double price;
 
-    ToppingSmall(ToppingType type, double price) {
+    ToppingLarge(ToppingType type, double price) {
         this.type = type;
         this.price = price;
     }
@@ -65,6 +63,4 @@ public enum ToppingSmall {
     public double getPrice() {
         return price;
     }
-
-
 }
