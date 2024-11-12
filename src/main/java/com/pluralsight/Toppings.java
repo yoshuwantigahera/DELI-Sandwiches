@@ -8,7 +8,7 @@ public class Toppings extends SandWich {
     private double extraCost;
 
 
-    public Toppings(int size, BreadType bread, ArrayList<String> toppings, boolean toasted, String type, double price, double extraCost ) {
+    public Toppings(int size, BreadType  bread, ArrayList<String> toppings, boolean toasted, String type, double price, double extraCost ) {
         super(size, bread, toppings, toasted);
     }
 

@@ -54,9 +54,26 @@ public abstract class SandWich extends Order {
     }
 
     // Method to add a topping to the list
-    public void addToppings(String topping){
-        this.addToppings(topping); //Adds new topping to list
+    public void addToppings(Toppings topping){
+        this.addToppings(topping);
     }
+
+    public double CalculatePrice(){
+        double price = size.getPrice();
+        for (Toppings toppings : Toppings) {
+            price += toppings.getToppingsPrice();
+        }
+        return price;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(size).append(" Sandwhich ").append(bread).append(" bread ").append(toasted ? "(toasted" : "").append()
+
+    }
+
+
 
     // Calculate the price of the sandwich based on size and toppings
     public static void getPrice(){
@@ -121,6 +138,11 @@ public abstract class SandWich extends Order {
             case 6 -> MeatChoice.BACON;
             default -> throw new IllegalStateException("Unexpected value: " + meatChoice);
         };
+    }
+
+
+    public double CalculatePrice(){
+        double price = size.get
     }
 
 
