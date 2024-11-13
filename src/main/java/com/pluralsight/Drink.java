@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import static com.pluralsight.SandWich.getPrice;
 
 public class Drink {
   private final DrinkSize size;
@@ -16,7 +15,7 @@ public class Drink {
     }
 
     public String toString(){
-        return size + " " + flavor + " drink ($" + getPrice()
+        return size + " " + flavor + " drink ($" + getPrice();
     }
 
 

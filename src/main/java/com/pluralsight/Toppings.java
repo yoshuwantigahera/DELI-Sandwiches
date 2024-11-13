@@ -2,39 +2,27 @@ package com.pluralsight;
 
 import java.util.ArrayList;
 
-public class Toppings extends SandWich {
-    private String type;
+public class Toppings {
+    private String name;
+    private ToppingType Type;
     private double price;
-    private double extraCost;
 
 
-    public Toppings(int size, BreadType  bread, ArrayList<String> toppings, boolean toasted, String type, double price, double extraCost ) {
-        super(size, bread, toppings, toasted);
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-//
-//    @Override
-//    public double getPrice() {
-//        return price;
-//    }
-
-    public void setPrice(double price) {
+    public Toppings (String name,ToppingType type,  Double price){
+        this.name = name;
         this.price = price;
+        this.Type = type;
+
     }
 
-    public double getExtraCost() {
-        return extraCost;
+    public String getName() {
+        return name;
     }
-
-    public void setExtraCost(double extraCost) {
-        this.extraCost = extraCost;
+    public ToppingType getType() {
+        return Type;
+    }
+    public double getPrice() {
+        return price;
     }
 
     public double getToppingsPrice(){

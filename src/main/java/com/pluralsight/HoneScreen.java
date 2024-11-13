@@ -58,11 +58,6 @@ public class HoneScreen extends SandWich {
 
         switch (startOrder){
             case 1:
-                selectBread();
-                getPrice();
-                meatChoice();
-
-
 
             case 2:
 
@@ -75,6 +70,7 @@ public class HoneScreen extends SandWich {
             default:
         }
     }
+
 
 
 }

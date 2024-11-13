@@ -42,7 +42,9 @@ public class Order {
 
 
 
-    public String checkOut{
+
+
+    public String checkOut() {
         StringBuilder details = new StringBuilder();
         for (SandWich sandWich : sandwiches)details.append(sandWich).append("\n");
         for (Drink drink : drinks) details.append(drink).append("\n");
@@ -52,6 +54,7 @@ public class Order {
         details.append("Total Price: $").append(calculateTotal());
         return details.toString();
     }
+
 
 //    public void checkout(){
 //        System.out.println("Order summary: ");
