@@ -59,7 +59,7 @@ public abstract class SandWich extends Order {
     }
 
     public double CalculatePrice(){
-        double price = size.getPrice();
+        double price = size. getPrice();
         for (Toppings toppings : Toppings) {
             price += toppings.getToppingsPrice();
         }
@@ -69,8 +69,12 @@ public abstract class SandWich extends Order {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(size).append(" Sandwhich ").append(bread).append(" bread ").append(toasted ? "(toasted" : "").append()
-
+        sb.append(size).append(" Sandwhich ").append(bread).append(" bread ").append(toasted ? "(toasted" : "").append("\n toppings:");
+        for (Toppings topping : toppings) {
+            sb.append("\n-").append(topping.getToppings()).append("(").append(topping.getType()).append(")");
+        }
+        sb.append("\nPrice: $").append(CalculatePrice());
+        return sb.toString();
     }
 
 
@@ -152,6 +156,26 @@ public abstract class SandWich extends Order {
 
     public static void display(String s) {
         System.out.println();
+    }
+
+
+    public static void selectChip(){
+        System.out.println("Choose your bread type: Doritos, Cheetos, Lays.");
+
+        Scanner myscanner = new Scanner(System.in);
+        String choice = myscanner.nextLine();
+
+        switch (choice.toLowerCase()){
+            case "doritos":
+            case "cheetos":
+            case "lays":
+                System.out.println("You selected: " + choice);
+                break;
+            default:
+                System.out.println("Invalid choice. Please try again");
+                selectChip();
+                break;
+        }
     }
 
 }
