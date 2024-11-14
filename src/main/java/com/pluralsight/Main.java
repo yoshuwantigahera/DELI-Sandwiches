@@ -1,11 +1,11 @@
 package com.pluralsight;
 
-import static com.pluralsight.HoneScreen.homeScreen;
+import static com.pluralsight.HomeScreen.HomePage;
 
 public class Main {
     public static void main(String[] args) {
 
-        homeScreen();
+        HomePage();
     }
 
 

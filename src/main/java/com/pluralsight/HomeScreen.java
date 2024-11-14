@@ -7,13 +7,29 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class HomeScreen {
+
     static Scanner scanner = new Scanner(System.in);
 
-    public void HomePage() {
+    public static void HomePage(){
+        System.out.println("                             Welcome to Zanzibar DELI-Sandwich");
+        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.println("Would you like to start your Zanzibar experience? \n1) New Order\n0) Exit ");
+        int choice = scanner.nextInt();
+            switch (choice) {
+                case 1 -> OrderScreen();
+                case 0 -> {
+                    System.out.println("Exiting...");
+                    return;
+                }
+                default -> System.out.println("Invalid option. Try again.");
+            }
+    }
+
+    public static void OrderScreen() {
         Order order = new Order();
 
         while (true) {
-            System.out.println("                             Welcome to Zanzibar DELI-Sandwich");//welcome
+            System.out.println("                             Let's start you Zanzibar Experience");
             System.out.println("-----------------------------------------------------------------------------------");
             System.out.println("1) New Sandwich\n2) Add Drink\n3) Add Chips\n4) Checkout\n0) Exit");
             int choice = scanner.nextInt();
@@ -26,6 +42,7 @@ public class HomeScreen {
                 case 4 -> checkout(order);
                 case 0 -> {
                     System.out.println("Exiting...");
+                    HomePage();
                     return;
                 }
                 default -> System.out.println("Invalid option. Try again.");
@@ -98,7 +115,7 @@ public class HomeScreen {
             }
         }
     }
-    /////Add drinks
+    //Add drinks
     private static void addDrink(Order order) {
         System.out.println("Choose drink size: 1) Small 2) Medium 3) Large");
         DrinkSize size = DrinkSize.values()[scanner.nextInt() - 1];
@@ -108,7 +125,7 @@ public class HomeScreen {
 
         order.addDrink(new Drink(size, flavor));
     }
-
+    //Add chips
     private static void addChips(Order order) {
         System.out.println("Enter chip type:");
         String type = scanner.next();
@@ -119,7 +136,7 @@ public class HomeScreen {
         order.addChip(new Chip(type, quantity));
     }
 
-    //order reciept
+    //order receipt
     private static void checkout(Order order) {
         System.out.println("\nOrder Summary:");
         System.out.println(order.checkOut());
@@ -130,15 +147,17 @@ public class HomeScreen {
         } else {
             System.out.println("Order canceled.");
         }
+        HomePage();
     }
 
     private static void saveReceipt(Order order) {
-        String filename = "ZanzibarOrders.csv.xlsx" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")) + ".txt";
+        String filename = "zanzibarOrders.CSV.xlsx" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")) + ".txt";
         try (FileWriter writer = new FileWriter(filename)) {
             writer.write(order.checkOut());
             System.out.println("Receipt saved: " + filename);
         } catch (IOException e) {
             System.out.println("Error saving receipt.");
         }
+        HomePage();
     }
 }
