@@ -51,7 +51,7 @@ public class Sandwhich2 {
                 case 1 -> SandWichSize.SMALL;
                 case 2 -> SandWichSize.MEDIUM;
                 case 3 -> SandWichSize.LARGE;
-                default -> SandWichSize.SMALL;
+                default -> SandWichSize.DEFAULT;
             };
         }
 

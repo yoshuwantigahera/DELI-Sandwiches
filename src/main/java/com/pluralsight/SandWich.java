@@ -27,18 +27,20 @@ public class SandWich extends Order {
         this.addToppings(topping);
     }
 
+
     public double CalculatePrice() {
-        double price = size;
-        for (Toppings toppings : this.toppings) {
-            price += toppings.getToppingsPrice();
+        double price = size.getBasePrice(); // Use a method or a mapping to get the price based on size
+        for (Toppings topping : this.toppings) {
+            price += topping.getToppingsPrice(); // Add topping prices
         }
         return price;
     }
 
+
         @Override
         public String toString () {
             StringBuilder sb = new StringBuilder();
-            sb.append(size).append(" Sandwhich ").append(bread).append(" bread ").append(toasted ? "(toasted" : "").append("\n toppings:");
+            sb.append(size).append(" Sandwich ").append(bread).append(" bread ").append(toasted ? "(toasted" : "").append("\n toppings:");
             for (Toppings topping : this.toppings) {
                 sb.append("\n-").append(topping.getName()).append("(").append(topping.getType()).append(")");
             }

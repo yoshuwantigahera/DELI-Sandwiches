@@ -11,7 +11,7 @@ public class Drink {
     }
 
     public double getPrice(){
-        return.size.getPrice();
+        return size.getPrice();
     }
 
     public String toString(){

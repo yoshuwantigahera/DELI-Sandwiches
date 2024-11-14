@@ -3,14 +3,14 @@ package com.pluralsight;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class HoneScreen extends SandWich {
+public class HoneScreen {
     static Scanner myscanner = new Scanner(System.in);
 
     static boolean running = true;
 
-    public HoneScreen(int size, BreadType bread, ArrayList<String> toppings, boolean toasted) {
-        super(size, bread, toppings, toasted);
-    }
+//    public HoneScreen(int size, BreadType bread, ArrayList<String> toppings, boolean toasted) {
+//        super(size, bread, toppings, toasted);
+//    }
 
 
     public static void homeScreen() {
