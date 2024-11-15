@@ -29,7 +29,7 @@ public class HomeScreen {
         Order order = new Order();
 
         while (true) {
-            System.out.println("                             Let's start you Zanzibar Experience");
+            System.out.println("                             Let's start your Zanzibar Experience");
             System.out.println("-----------------------------------------------------------------------------------");
             System.out.println("1) New Sandwich\n2) Add Drink\n3) Add Chips\n4) Checkout\n0) Exit");
             int choice = scanner.nextInt();
@@ -86,7 +86,11 @@ public class HomeScreen {
     }
 
     private static void addToppings(Sandwich sandwich) {
-        System.out.println("Available toppings:\n1) Steak\n2) Ham\n3) Salami\n4) Bacon\n5) American\n6) Swiss\n7) Lettuce\n8) Ketchup");
+        System.out.println("Available Meats:\n1) Steak\n2) Ham\n3) Salami\n4) Roasted Beef\n5) Chicken\n6) Bacon ");
+        System.out.println("Available Cheese:\n7) American\n8) Provolone\n9) Cheddar\n10) Swiss ");
+        System.out.println("Available Free Toppings:\n11) Lettuce\n12) Peppers\n13) Onions\n14) Tomatoes\n15) Jalapenos\n16) Cucumbers \n17) Pickles\n18) Guacamole\n19) Mushrooms ");
+        System.out.println("Available Sauces:\n20) Mayo\n21) Mustard\n22) Ketchup\n23) Ranch\n24) Thousand Islands\n25)Vinaigrette ");
+
         System.out.println("Type 'done' when finished.");
 
         while (true) {
@@ -100,11 +104,29 @@ public class HomeScreen {
                     case 1 -> new Topping("Steak", ToppingType.MEAT, 3.00);
                     case 2 -> new Topping("Ham", ToppingType.MEAT, 3.00);
                     case 3 -> new Topping("Salami", ToppingType.MEAT, 3.00);
-                    case 4 -> new Topping("Bacon", ToppingType.MEAT, 3.00);
-                    case 5 -> new Topping("American", ToppingType.CHEESE, 2.25);
-                    case 6 -> new Topping("Swiss", ToppingType.CHEESE, 2.25);
-                    case 7 -> new Topping("Lettuce", ToppingType.REGULAR, 0.00);
-                    case 8 -> new Topping("Ketchup", ToppingType.SAUCE, 0.00);
+                    case 4 -> new Topping("Roasted Beef", ToppingType.MEAT, 3.00);
+                    case 5 -> new Topping("Chicken", ToppingType.MEAT, 3.00);
+                    case 6 -> new Topping("Bacon", ToppingType.MEAT, 3.00);
+                    case 7 -> new Topping("American", ToppingType.CHEESE, 2.25);
+                    case 8 -> new Topping("Provolone", ToppingType.CHEESE, 2.25);
+                    case 9 -> new Topping("Cheddar", ToppingType.CHEESE, 2.25);
+                    case 10 -> new Topping("Swiss", ToppingType.CHEESE, 2.25);
+                    case 11 -> new Topping("Lettuce", ToppingType.REGULAR, 0.00);
+                    case 12 -> new Topping("Peppers", ToppingType.REGULAR, 0.00);
+                    case 13 -> new Topping("Onions", ToppingType.REGULAR, 0.00);
+                    case 14 -> new Topping("Tomatoes", ToppingType.REGULAR, 0.00);
+                    case 15 -> new Topping("Jalapenos", ToppingType.REGULAR, 0.00);
+                    case 16 -> new Topping("Cucumbers", ToppingType.REGULAR, 0.00);
+                    case 17 -> new Topping("Pickles", ToppingType.REGULAR, 0.00);
+                    case 18 -> new Topping("Guacamole", ToppingType.REGULAR, 0.00);
+                    case 19 -> new Topping("Mushrooms", ToppingType.REGULAR, 0.00);
+                    case 20 -> new Topping("Mayo", ToppingType.SAUCE, 0.00);
+                    case 21 -> new Topping("Mustard", ToppingType.SAUCE, 0.00);
+                    case 22 -> new Topping("Ketchup", ToppingType.SAUCE, 0.00);
+                    case 23 -> new Topping("Ranch", ToppingType.SAUCE, 0.00);
+                    case 24 -> new Topping("Thousand Islands", ToppingType.SAUCE, 0.00);
+                    case 25 -> new Topping("Vinaigrette", ToppingType.SAUCE, 0.00);
+
                     default -> throw new IllegalArgumentException();
                 };
 
