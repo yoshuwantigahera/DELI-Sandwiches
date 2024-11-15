@@ -89,7 +89,7 @@ public class HomeScreen {
         System.out.println("Available Meats:\n1) Steak\n2) Ham\n3) Salami\n4) Roasted Beef\n5) Chicken\n6) Bacon ");
         System.out.println("Available Cheese:\n7) American\n8) Provolone\n9) Cheddar\n10) Swiss ");
         System.out.println("Available Free Toppings:\n11) Lettuce\n12) Peppers\n13) Onions\n14) Tomatoes\n15) Jalapenos\n16) Cucumbers \n17) Pickles\n18) Guacamole\n19) Mushrooms ");
-        System.out.println("Available Sauces:\n20) Mayo\n21) Mustard\n22) Ketchup\n23) Ranch\n24) Thousand Islands\n25)Vinaigrette ");
+        System.out.println("Available Sauces:\n20) Mayo\n21) Mustard\n22) Ketchup\n23) Ranch\n24) Thousand Islands\n25) Vinaigrette ");
 
         System.out.println("Type 'done' when finished.");
 
@@ -139,7 +139,7 @@ public class HomeScreen {
     }
     //Add drinks
     private static void addDrink(Order order) {
-        System.out.println("Choose drink size: 1) Small 2) Medium 3) Large");
+        System.out.println("Choose drink size: 1) Small = ($2.00) 2) Medium = ($2.50) 3) Large = ($3.00)" );
         DrinkSize size = DrinkSize.values()[scanner.nextInt() - 1];
 
         System.out.println("Choose drink flavor: 1) Coke 2) Sprite 3) Fanta");
@@ -149,7 +149,7 @@ public class HomeScreen {
     }
     //Add chips
     private static void addChips(Order order) {
-        System.out.println("Enter chip type:");
+        System.out.println("Enter chip type below: ($1.50)" );
         String type = scanner.next();
 
         System.out.println("How many bags of chips?");
