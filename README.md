@@ -1,5 +1,4 @@
 Zanzibar DELI-Sandwiches
-Zanzibar DELI-Sandwiches 
 
 is a Java-based Point-of-Sale (POS) system designed for managing orders at a sandwich shop. The system enables users to create custom sandwiches, add drinks and chips, and finalize orders with an easy-to-read summary and receipt. Its intuitive interface ensures fast and efficient order processing.
 
