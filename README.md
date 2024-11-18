@@ -1,29 +1,71 @@
+h
 Zanzibar DELI-Sandwiches
-Sandwich Shop POS System
-Between The Zanzibar is a point-of-sale (POS) system for managing orders at a sandwich shop. This Java-based application allows users to create new orders with custom or signature sandwiches, add drinks and chips, and check out with an order summary. The app is designed with flexibility and ease-of-use in mind for quick and effective order processing.
+Zanzibar DELI-Sandwiches is a Java-based Point-of-Sale (POS) system designed for managing orders at a sandwich shop. The system enables users to create custom sandwiches, add drinks and chips, and finalize orders with an easy-to-read summary and receipt. Its intuitive interface ensures fast and efficient order processing.
 
 Features
-Custom Sandwich Creation: Choose bread type, size, toast preference, and add toppings to create a custom sandwich.
-Drink and Chips Selection: Add drinks and chips to your order with a variety of flavors and sizes.
-Order Management: View order summary, cancel an order, or confirm checkout with a saved receipt.
+Custom Sandwich Creation:
+
+Select from multiple bread types, sizes, and toasting preferences.
+Add regular or premium toppings to create personalized sandwiches.
+Drink and Chips Selection:
+
+Choose from a variety of drink sizes and flavors.
+Add chips to complete the meal.
+Order Management:
+
+View a detailed order summary.
+Cancel orders if needed.
+Confirm checkout and generate a timestamped receipt.
 Class Overview
 Main Classes
-UserInterface: Manages user interactions, displays menus, and handles order processing.
-Order: Represents a single order, containing sandwiches, drinks, and chips.
-Sandwich: Defines a customizable sandwich with bread type, size, toast preference, and toppings.
-Drink: Represents a drink with size and flavor.
-Chips: Represents a chips selection with a chosen flavor.
+UserInterface: Manages user interaction, displays menus, and handles navigation through the app.
+Order: Represents a single customer order, including sandwiches, drinks, and chips.
+Sandwich: Defines a customizable sandwich, including bread type, size, toasting option, and toppings.
+Drink: Represents a drink, with options for size and flavor.
+Chips: Represents a chips selection, allowing for various flavors.
 Additional Classes
-Topping: Abstract class representing a sandwich topping.
-PremiumTopping: Extends Topping for premium toppings (e.g., bacon).
-RegularTopping: Extends Topping for standard toppings (e.g., lettuce).
+Topping (Abstract): Base class for sandwich toppings.
+PremiumTopping: Extends Topping to represent premium toppings (e.g., bacon, cheese).
+RegularTopping: Extends Topping to represent standard toppings (e.g., lettuce, tomatoes).
 Enumerations
-BreadType: Enum for different types of bread (e.g., White, Wheat, Rye).
-SandwichSize: Enum for sandwich sizes (e.g., EightInch, TwelveInch).
-DrinkFlavor: Enum for drink flavors (e.g., Cola, Lemonade).
-ChipsFlavor: Enum for chips flavors (e.g., SaltAndVinegar, BBQ).
-ToppingType: Enum for topping types (e.g., Meat, Vegetable).
+BreadType: Enum for bread types (e.g., White, Wheat, Rye).
+SandwichSize: Enum for sandwich sizes (e.g., FourInch, EightInch, TwelveInch).
+DrinkFlavor: Enum for drink flavors (e.g., Cola, Lemonade, IcedTea).
+ChipsFlavor: Enum for chips flavors (e.g., SaltAndVinegar, BBQ, Plain).
+ToppingType: Enum for topping categories (e.g., Meat, Vegetable).
 Installation
-Clone the repository:
+Follow these steps to set up the project on your local machine:
 
+Clone the Repository:
+
+bash
+Copy code
 git clone https://github.com/yoshuwantigahera/DELI-Sandwiches.git
+Navigate to the Project Directory:
+
+bash
+Copy code
+cd DELI-Sandwiches
+Open the Project in Your IDE:
+
+Use your preferred IDE (e.g., IntelliJ IDEA, Eclipse).
+Ensure Java is properly configured.
+Build and Run the Application:
+
+Compile the code.
+Run the UserInterface class to start the application.
+Usage
+Launch the App:
+
+Start the app to access the main menu.
+Create a New Order:
+
+Select New Order from the home screen.
+Customize your sandwiches, drinks, and chips.
+View and Manage Orders:
+
+View the summary of your current order.
+Add, remove, or modify items as needed.
+Checkout:
+
+Confirm the order and generate a receipt in the receipts/ directory.
